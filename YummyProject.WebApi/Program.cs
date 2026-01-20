@@ -1,10 +1,16 @@
+using FluentValidation;
+using System.Reflection;
 using YummyProject.WebApi.Context;
+using YummyProject.WebApi.Entities;
+using YummyProject.WebApi.ValidationRules;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddDbContext<ApiContext>();
+builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
