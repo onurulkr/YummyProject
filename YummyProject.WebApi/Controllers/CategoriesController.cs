@@ -31,7 +31,7 @@ namespace YummyProject.WebApi.Controllers
             return Ok("Kategori ekleme işlemi başarılı");
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteCategory(int id)
         {
             var value = _context.Categories.Find(id);
