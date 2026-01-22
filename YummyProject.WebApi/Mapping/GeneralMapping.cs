@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using YummyProject.WebApi.Dtos.FeatureDtos;
 using YummyProject.WebApi.Dtos.MessageDtos;
+using YummyProject.WebApi.Dtos.NotificationDtos;
 using YummyProject.WebApi.Dtos.ProductDtos;
 using YummyProject.WebApi.Entities;
 
@@ -23,6 +24,11 @@ namespace YummyProject.WebApi.Mapping
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResultProductWithCategoryDto>().ForMember(x => x.CategoryName,
                 y => y.MapFrom(z => z.Category.CategoryName)).ReverseMap();
+
+            CreateMap<Notification, ResultNotificationDto>().ReverseMap();
+            CreateMap<Notification, CreateNotificationDto>().ReverseMap();
+            CreateMap<Notification, UpdateNotificationDto>().ReverseMap();
+            CreateMap<Notification, GetByIdNotificationDto>().ReverseMap();
         }
     }
 }
