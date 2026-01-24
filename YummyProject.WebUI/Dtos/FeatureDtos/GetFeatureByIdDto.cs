@@ -1,6 +1,6 @@
 ﻿namespace YummyProject.WebUI.Dtos.FeatureDtos
 {
-    public class GetFeatureById
+    public class GetFeatureByIdDto
     {
         public int FeatureId { get; set; }
         public string Title { get; set; }

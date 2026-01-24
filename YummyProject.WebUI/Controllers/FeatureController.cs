@@ -60,7 +60,7 @@ namespace YummyProject.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7053/api/Features/GetFeature?id=" + id);
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var value = JsonConvert.DeserializeObject<GetFeatureById>(jsonData);
+            var value = JsonConvert.DeserializeObject<GetFeatureByIdDto>(jsonData);
             return View(value);
         }
 

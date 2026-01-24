@@ -1,0 +1,66 @@
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using YummyProject.WebApi.Context;
+using YummyProject.WebApi.Dtos.AboutDtos;
+using YummyProject.WebApi.Entities;
+
+namespace YummyProject.WebApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AboutsController : ControllerBase
+    {
+        private readonly ApiContext _context;
+        private readonly IMapper _mapper;
+
+        public AboutsController(ApiContext apiContext, IMapper mapper)
+        {
+            _context = apiContext;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public IActionResult AboutList()
+        {
+            var values = _context.Abouts.ToList();
+            return Ok(values);
+        }
+
+        [HttpPost]
+        public IActionResult CreateAbout(CreateAboutDto createAboutDto)
+        {
+            //_context.Abouts.Add(About);
+            //_context.SaveChanges();
+            var value = _mapper.Map<About>(createAboutDto);
+            _context.Abouts.Add(value);
+            _context.SaveChanges();
+            return Ok("Hakkımızda ekleme işlemi başarılı");
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteAbout(int id)
+        {
+            var value = _context.Abouts.Find(id);
+            _context.Abouts.Remove(value);
+            _context.SaveChanges();
+            return Ok("Hakkımızda silme işlemi başarılı");
+        }
+
+        [HttpGet("GetAbout")]
+        public IActionResult GetAbout(int id)
+        {
+            var value = _context.Abouts.Find(id);
+            return Ok(value);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
+        {
+            var value = _mapper.Map<About>(updateAboutDto);
+            _context.Abouts.Update(value);
+            _context.SaveChanges();
+            return Ok("Hakkımızda güncelleme işlemi başarılı");
+        }
+    }
+}
