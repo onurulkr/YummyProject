@@ -1,6 +1,6 @@
 ﻿namespace YummyProject.WebUI.Dtos.ProductDtos
 {
-    public class ResultProductDto
+    public class GetProductByIdDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }

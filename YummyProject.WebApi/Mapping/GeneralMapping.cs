@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using YummyProject.WebApi.Dtos.CategoryDtos;
 using YummyProject.WebApi.Dtos.FeatureDtos;
 using YummyProject.WebApi.Dtos.MessageDtos;
 using YummyProject.WebApi.Dtos.NotificationDtos;
@@ -29,6 +30,9 @@ namespace YummyProject.WebApi.Mapping
             CreateMap<Notification, CreateNotificationDto>().ReverseMap();
             CreateMap<Notification, UpdateNotificationDto>().ReverseMap();
             CreateMap<Notification, GetByIdNotificationDto>().ReverseMap();
+
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, UpdateCategoryDto>().ReverseMap();
         }
     }
 }

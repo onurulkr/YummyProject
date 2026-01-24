@@ -16,7 +16,6 @@ namespace YummyProject.WebApi.Controllers
         private readonly IValidator<Product> _validator;
         private readonly ApiContext _context;
         private readonly IMapper _mapper;
-
         public ProductsController(IValidator<Product> validator, ApiContext context, IMapper mapper)
         {
             _validator = validator;
@@ -75,7 +74,7 @@ namespace YummyProject.WebApi.Controllers
             {
                 _context.Products.Update(product);
                 _context.SaveChanges();
-                return Ok("Güncelleme işlemi başarılı");
+                return Ok("Ürün güncelleme işlemi başarılı");
             }
         }
 
@@ -85,7 +84,7 @@ namespace YummyProject.WebApi.Controllers
             var value = _mapper.Map<Product>(createProductDto);
             _context.Products.Add(value);
             _context.SaveChanges();
-            return Ok("Kategori ile ürün ekleme işlemi başarılı");
+            return Ok("Ekleme işlemi başarılı");
         }
 
         [HttpGet("ProductListWithCategory")]
