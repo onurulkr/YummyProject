@@ -31,7 +31,7 @@ namespace YummyProject.WebApi.Controllers
             return Ok("Şef ekleme işlemi başarılı");
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteChef(int id)
         {
             var value = _context.Chefs.Find(id);
