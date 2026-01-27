@@ -38,7 +38,7 @@ namespace YummyProject.WebApi.Controllers
             return Ok("Ekleme işlemi başarılı");
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteContact(int id)
         {
             var value = _context.Contacts.Find(id);
@@ -61,6 +61,7 @@ namespace YummyProject.WebApi.Controllers
             contact.Email = updateContactDto.Email;
             contact.Address = updateContactDto.Address;
             contact.Phone = updateContactDto.Phone;
+            contact.ContactId = updateContactDto.ContactId;
             contact.MapLocation = updateContactDto.MapLocation;
             contact.OpenHours = updateContactDto.OpenHours;
             _context.Contacts.Update(contact);

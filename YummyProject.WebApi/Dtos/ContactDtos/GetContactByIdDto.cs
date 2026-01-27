@@ -1,6 +1,6 @@
 ﻿namespace YummyProject.WebApi.Dtos.ContactDtos
 {
-    public class GetByIdContactDto
+    public class GetContactByIdDto
     {
         public int ContactId { get; set; }
         public string MapLocation { get; set; }

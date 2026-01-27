@@ -23,7 +23,7 @@ namespace YummyProject.WebApi.Mapping
             CreateMap<Message, ResultMessageDto>().ReverseMap();
             CreateMap<Message, CreateMessageDto>().ReverseMap();
             CreateMap<Message, UpdateMessageDto>().ReverseMap();
-            CreateMap<Message, GetByIdMessageDto>().ReverseMap();
+            CreateMap<Message, GetMessageByIdDto>().ReverseMap();
 
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResultProductWithCategoryDto>().ForMember(x => x.CategoryName,

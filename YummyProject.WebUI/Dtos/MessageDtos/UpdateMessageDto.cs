@@ -1,6 +1,6 @@
-﻿namespace YummyProject.WebApi.Dtos.MessageDtos
+﻿namespace YummyProject.WebUI.Dtos.MessageDtos
 {
-    public class GetByIdMessageDto
+    public class UpdateMessageDto
     {
         public int MessageId { get; set; }
         public string NameSurname { get; set; }

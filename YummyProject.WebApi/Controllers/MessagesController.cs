@@ -49,7 +49,7 @@ namespace YummyProject.WebApi.Controllers
         public IActionResult GetMessage(int id)
         {
             var value = _context.Messages.Find(id);
-            return Ok(_mapper.Map<GetByIdMessageDto>(value));
+            return Ok(_mapper.Map<GetMessageByIdDto>(value));
         }
 
         [HttpPut]
